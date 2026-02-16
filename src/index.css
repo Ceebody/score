@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+button {
+  touch-action: manipulation;
+}
+
+@media (max-width: 600px) {
+  button {
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+  }
+}
+
+/* Hide elements marked .no-print in any print output (global rule) */
+@media print {
+  .no-print { display: none !important; }
+}

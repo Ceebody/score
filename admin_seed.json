@@ -1,0 +1,11 @@
+{
+    "users": {
+        "kVzobDcH8KcqgK8Zqs6RH1xuy3l2": {
+            "role": "admin",
+            "mustChangePassword": false,
+            "email": "admin@ceebody.com",
+            "firstName": "Super",
+            "lastName": "Admin"
+        }
+    }
+}

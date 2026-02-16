@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Management System - Training Manual</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4e342e; /* Brown-800 */
+            --primary-light: #795548; /* Brown-500 */
+            --secondary: #ffb300; /* Amber-600 */
+            --secondary-light: #ffca28; /* Amber-400 */
+            --bg: #fafafa;
+            --white: #ffffff;
+            --text: #3e2723;
+            --text-light: #6d4c41;
+            --gray: #f5f5f5;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        
+        body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
+
+        /* Layout */
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: 250px 1fr; gap: 30px; }
+        
+        /* Sidebar Navigation */
+        .sidebar { position: sticky; top: 20px; height: calc(100vh - 40px); overflow-y: auto; background: var(--white); padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .sidebar h2 { color: var(--primary); font-size: 1.2rem; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--secondary); }
+        .nav-link { display: block; padding: 10px 15px; color: var(--text-light); text-decoration: none; border-radius: 6px; margin-bottom: 5px; transition: all 0.2s; }
+        .nav-link:hover, .nav-link.active { background-color: var(--secondary-light); color: var(--primary); font-weight: 600; }
+        .nav-link i { margin-right: 10px; width: 20px; }
+
+        /* Main Content */
+        .content { background: var(--white); padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        
+        /* Typography */
+        h1 { color: var(--primary); font-size: 2.5rem; margin-bottom: 10px; }
+        .subtitle { color: var(--text-light); font-size: 1.1rem; margin-bottom: 40px; }
+        h2 { color: var(--primary); margin-top: 40px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #eee; display: flex; align-items: center; gap: 10px; }
+        h3 { color: var(--primary-light); margin-top: 25px; margin-bottom: 15px; }
+        p { margin-bottom: 15px; color: var(--text-light); }
+        ul { margin-bottom: 20px; padding-left: 20px; }
+        li { margin-bottom: 8px; color: var(--text-light); }
+
+        /* Visual Illustrations */
+        .illustration { background: var(--gray); border-radius: 8px; padding: 20px; margin: 20px 0; border: 1px solid #eee; }
+        .screen-mockup { background: var(--white); border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); overflow: hidden; border: 1px solid #ddd; }
+        .mockup-header { background: linear-gradient(to right, var(--primary), var(--secondary)); height: 40px; display: flex; align-items: center; padding: 0 15px; }
+        .mockup-dots { display: flex; gap: 6px; }
+        .dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.3); }
+        .mockup-body { padding: 20px; min-height: 150px; display: flex; gap: 15px; }
+        .mockup-sidebar { width: 20%; background: var(--gray); border-radius: 4px; height: 120px; }
+        .mockup-content { flex: 1; display: flex; flex-direction: column; gap: 10px; }
+        .mockup-row { height: 20px; background: var(--gray); border-radius: 4px; width: 100%; }
+        .mockup-card { height: 60px; background: #fff; border: 1px solid #eee; border-radius: 4px; width: 30%; display: inline-block; margin-right: 3%; }
+        
+        /* Tips & Notes */
+        .tip { background-color: #fff8e1; border-left: 4px solid var(--secondary); padding: 15px; margin: 20px 0; border-radius: 0 4px 4px 0; }
+        .tip strong { color: var(--primary); }
+
+        /* Print Styles */
+        @media print {
+            .sidebar { display: none; }
+            .container { display: block; }
+            .content { box-shadow: none; padding: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <aside class="sidebar">
+        <h2>Table of Contents</h2>
+        <a href="#intro" class="nav-link active"><i class="fas fa-home"></i> Introduction</a>
+        <a href="#login" class="nav-link"><i class="fas fa-sign-in-alt"></i> Accessing the System</a>
+        <a href="#dashboard" class="nav-link"><i class="fas fa-tachometer-alt"></i> Admin Dashboard</a>
+        <a href="#students" class="nav-link"><i class="fas fa-user-graduate"></i> Managing Students</a>
+        <a href="#teachers" class="nav-link"><i class="fas fa-chalkboard-teacher"></i> Managing Teachers</a>
+        <a href="#reports" class="nav-link"><i class="fas fa-file-alt"></i> Generating Reports</a>
+        <a href="#backups" class="nav-link"><i class="fas fa-database"></i> System Backups</a>
+        <a href="#profile" class="nav-link"><i class="fas fa-user-cog"></i> Profile & Settings</a>
+    </aside>
+
+    <main class="content">
+        <section id="intro">
+            <h1>System Training Manual</h1>
+            <p class="subtitle">Comprehensive guide to navigating and using the School Management System.</p>
+            
+            <div class="tip">
+                <strong>Welcome!</strong> This system is designed with the school's official colors: 
+                <span style="color: var(--primary); font-weight: bold;">Brown</span>, 
+                <span style="color: var(--secondary); font-weight: bold;">Gold</span>, and 
+                <span style="color: #999; font-weight: bold;">White</span>.
+            </div>
+        </section>
+
+        <section id="login">
+            <h2><i class="fas fa-sign-in-alt"></i> Accessing the System</h2>
+            <p>To access the system, navigate to the login page. You will need your registered email address and password.</p>
+            
+            <div class="illustration">
+                <div class="screen-mockup" style="max-width: 400px; margin: 0 auto;">
+                    <div class="mockup-header">
+                        <div class="mockup-dots"><div class="dot"></div><div class="dot"></div></div>
+                    </div>
+                    <div class="mockup-body" style="flex-direction: column; align-items: center; justify-content: center; height: 200px;">
+                        <div style="width: 60px; height: 60px; background: var(--secondary); border-radius: 50%; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; color: white;"><i class="fas fa-school fa-2x"></i></div>
+                        <div style="width: 80%; height: 35px; border: 1px solid #ddd; border-radius: 4px; margin-bottom: 10px; display: flex; align-items: center; padding-left: 10px; color: #999;">Email Address</div>
+                        <div style="width: 80%; height: 35px; border: 1px solid #ddd; border-radius: 4px; margin-bottom: 15px; display: flex; align-items: center; padding-left: 10px; color: #999;">Password</div>
+                        <div style="width: 80%; height: 35px; background: linear-gradient(to right, var(--primary), var(--secondary)); border-radius: 4px; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold;">LOGIN</div>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 10px; font-size: 0.9rem;"><i>Figure 1: Secure Login Screen</i></p>
+            </div>
+
+            <h3>First Time Login?</h3>
+            <p>If you are logging in for the first time, you may be prompted to change your password immediately for security purposes.</p>
+        </section>
+
+        <section id="dashboard">
+            <h2><i class="fas fa-tachometer-alt"></i> Admin Dashboard</h2>
+            <p>The Dashboard is your central command center. It provides an overview of the school's performance and quick access to key features.</p>
+
+            <div class="illustration">
+                <div class="screen-mockup">
+                    <div class="mockup-header">
+                        <div class="mockup-dots"><div class="dot"></div><div class="dot"></div></div>
+                    </div>
+                    <div class="mockup-body">
+                        <div class="mockup-sidebar"></div>
+                        <div class="mockup-content">
+                            <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+                                <div class="mockup-card" style="background: #fff; border-left: 4px solid var(--secondary);"></div>
+                                <div class="mockup-card" style="background: #fff; border-left: 4px solid var(--primary);"></div>
+                                <div class="mockup-card" style="background: #fff; border-left: 4px solid var(--secondary);"></div>
+                            </div>
+                            <div class="mockup-row" style="height: 100px; background: linear-gradient(to bottom right, var(--primary), var(--secondary)); color: white; display: flex; align-items: center; justify-content: center;">
+                                School Performance Stats
+                            </div>
+                            <div style="display: flex; gap: 10px;">
+                                <div style="flex: 1; height: 80px; background: #f5f5f5; border-radius: 4px;"></div>
+                                <div style="flex: 1; height: 80px; background: #f5f5f5; border-radius: 4px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 10px; font-size: 0.9rem;"><i>Figure 2: Admin Dashboard Overview</i></p>
+            </div>
+
+            <h3>Key Features:</h3>
+            <ul>
+                <li><strong>Stats Cards:</strong> View total students, teachers, parents, and reports at a glance.</li>
+                <li><strong>School Performance:</strong> A dedicated section (Brown/Gold gradient) showing attendance and completion rates.</li>
+                <li><strong>Quick Actions:</strong> Fast access to common tasks like "Add Student" or "Publish Reports".</li>
+            </ul>
+        </section>
+
+        <section id="students">
+            <h2><i class="fas fa-user-graduate"></i> Managing Students</h2>
+            <p>Navigate to the <strong>Students</strong> page to view, search, and manage all student records.</p>
+            
+            <h3>Actions Available:</h3>
+            <ul>
+                <li><strong>Search:</strong> Use the search bar to find students by name or ID.</li>
+                <li><strong>Filter:</strong> Filter the list by Class (e.g., JHS 1, JHS 2).</li>
+                <li><strong>Print:</strong> Click the "Print" button to generate a printable list of students.</li>
+                <li><strong>View Profile:</strong> Click on any student card to view their full academic profile and history.</li>
+            </ul>
+        </section>
+
+        <section id="teachers">
+            <h2><i class="fas fa-chalkboard-teacher"></i> Managing Teachers</h2>
+            <p>The <strong>Teachers</strong> page allows you to oversee the teaching staff.</p>
+            <ul>
+                <li>View all registered teachers.</li>
+                <li>Assign classes and subjects to teachers.</li>
+                <li>Monitor teacher attendance and performance.</li>
+            </ul>
+        </section>
+
+        <section id="reports">
+            <h2><i class="fas fa-file-alt"></i> Generating Reports</h2>
+            <p>The system automates the generation of term reports. Go to the <strong>Reports</strong> section to:</p>
+            
+            <div class="tip">
+                <strong>Note:</strong> Reports are generated based on the scores entered by teachers. Ensure all scores are submitted before generating reports.
+            </div>
+
+            <ul>
+                <li><strong>Select Class:</strong> Choose the class you want to generate reports for.</li>
+                <li><strong>Check Status:</strong> See which students have complete scores.</li>
+                <li><strong>Print/Download:</strong> Generate PDF reports for individual students or the entire class.</li>
+            </ul>
+        </section>
+
+        <section id="backups">
+            <h2><i class="fas fa-database"></i> System Backups</h2>
+            <p>Protect your data using the <strong>Backup Manager</strong>.</p>
+            
+            <div class="illustration">
+                <div class="screen-mockup">
+                    <div class="mockup-header"></div>
+                    <div class="mockup-body" style="flex-direction: column;">
+                        <div style="width: 100%; height: 80px; background: linear-gradient(to right, var(--primary), var(--secondary)); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.2rem;">
+                            <i class="fas fa-cloud-upload-alt" style="margin-right: 10px;"></i> Create New Backup
+                        </div>
+                        <div style="margin-top: 20px;">
+                            <div style="height: 40px; border-bottom: 1px solid #eee; display: flex; align-items: center; justify-content: space-between;">
+                                <span><i class="fas fa-history" style="color: var(--secondary);"></i> Backup_2024_Term1</span>
+                                <span style="color: #999;">2 days ago</span>
+                            </div>
+                            <div style="height: 40px; border-bottom: 1px solid #eee; display: flex; align-items: center; justify-content: space-between;">
+                                <span><i class="fas fa-history" style="color: var(--secondary);"></i> Backup_2023_Final</span>
+                                <span style="color: #999;">1 month ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <ul>
+                <li><strong>Create Backup:</strong> One-click button to save a snapshot of the entire database.</li>
+                <li><strong>Restore:</strong> Ability to revert to a previous state if needed (Admin only).</li>
+                <li><strong>Download:</strong> Save backup files locally for extra security.</li>
+            </ul>
+        </section>
+
+        <section id="profile">
+            <h2><i class="fas fa-user-cog"></i> Profile & Settings</h2>
+            <p>Manage your personal account settings in the <strong>My Profile</strong> section.</p>
+            <ul>
+                <li><strong>Update Info:</strong> Change your name, email, or phone number.</li>
+                <li><strong>Change Password:</strong> Securely update your login password.</li>
+                <li><strong>Customization:</strong> The profile page features a modern interface with the school's Brown and Gold theme.</li>
+            </ul>
+        </section>
+
+        <footer style="margin-top: 50px; padding-top: 20px; border-top: 1px solid #eee; text-align: center; color: #999; font-size: 0.9rem;">
+            &copy; 2024 School Management System. All Rights Reserved.
+        </footer>
+    </main>
+</div>
+
+<script>
+    // Simple smooth scrolling for navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+            
+            // Update active state
+            document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+</script>
+
+</body>
+</html>

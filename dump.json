@@ -1,0 +1,89 @@
+{
+  "classes": {
+    "basic1": {
+      "name": "Basic 1"
+    },
+    "basic2": {
+      "name": "Basic 2"
+    },
+    "basic3": {
+      "name": "Basic 3"
+    },
+    "basic4": {
+      "name": "Basic 4"
+    },
+    "basic5": {
+      "name": "Basic 5"
+    },
+    "basic6": {
+      "name": "Basic 6"
+    },
+    "basic7": {
+      "name": "Basic 7"
+    },
+    "basic8": {
+      "name": "Basic 8"
+    },
+    "basic9": {
+      "name": "Basic 9"
+    },
+    "creche": {
+      "name": "Creche"
+    },
+    "kindergarten1": {
+      "name": "Kindergarten 1"
+    },
+    "kindergarten2": {
+      "name": "Kindergarten 2"
+    },
+    "nursery1": {
+      "name": "Nursery 1"
+    },
+    "nursery2": {
+      "name": "Nursery 2"
+    }
+  },
+  "students": {
+    "9bMy1sGlW4cx8ikUKtxTHYaO3Et1": "1 students",
+    "A2prPmllUSOriPpp5e2UauloRGi2": "1 students",
+    "ACYUnVk6KwRoQFHadWT35eBE3UD3": "1 students",
+    "XepJQrloVoXnxyWfC7kdV2b6TMl2": "1 students",
+    "YBS202511B2": "1 students",
+    "YBS2025126C": "1 students",
+    "YBS202516BD": "1 students",
+    "YBS20251F5A": "1 students",
+    "YBS2025371F": "1 students",
+    "YBS20254CBB": "1 students",
+    "YBS20256CAF": "1 students",
+    "YBS20257168": "1 students",
+    "YBS20258872": "1 students",
+    "YBS202590D6": "1 students",
+    "YBS2025A217": "1 students",
+    "YBS2025B4C0": "1 students",
+    "YBS2025BB49": "1 students",
+    "YBS2025BCD8": "1 students",
+    "YBS2025D505": "1 students",
+    "YBS2025F83C": "1 students",
+    "YhBwUD7umxRGQR7HidK0Zd53qAg1": "1 students",
+    "Zl5hT8BblNgiEISS1uFRX4CuSN12": "1 students",
+    "basic1": "22 students",
+    "basic2": "21 students",
+    "basic3": "15 students",
+    "basic4": "16 students",
+    "basic5": "12 students",
+    "basic6": "18 students",
+    "basic7": "15 students",
+    "basic8": "21 students",
+    "basic9": "12 students",
+    "jFPoj87lCFaLKZaIm09C9YX8CuG2": "1 students",
+    "k8wqEeP9uRQOW8sMsoKyvqIvrZZ2": "1 students",
+    "kindergarten1": "21 students",
+    "kindergarten2": "15 students",
+    "mflBcT6MxGTBhr1GwgWfyx9SHmi1": "1 students",
+    "nhp1GOEgvJZRNFcFuwgBZZz6xpc2": "1 students",
+    "qsmUqzjahJUns2D5sCN1cESKHJi1": "1 students",
+    "tnOS4EK7nabYlVy4BpvPDhjZpHh2": "1 students",
+    "ufZf2BGmpmfOznbXF9tN2zOh6rY2": "1 students",
+    "vYnRxnn4ZUNJSyoGkxny0TNYjgQ2": "1 students"
+  }
+}
